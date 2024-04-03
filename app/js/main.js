@@ -18,10 +18,23 @@ $(function () {
 $(document).ready(function () {
   $('.reviews__items').slick({
     dots: true,
-    arrows: true,
     infinite: true,
-    prevArrow: '<button type="button" class="slick-prev"><img src="images/arrow-prev.svg" alt=""></button>',
-    nextArrow: '<button type="button" class="slick-next"><img src="images/arrow-next.svg" alt=""></button>'
+    focusOnChange: true,
+    accessibility: true,
+    prevArrow: '<button type="button" class="slick-prev"><svg class="restaurant__slider-icon"><use xlink: href="images/sprite.svg#arrow-prev"></use></svg ></button>',
+    nextArrow: '<button type="button" class="slick-next"><svg class="restaurant__slider-icon"><use xlink: href="images/sprite.svg#arrow-next"></use></svg ></button >'
 
   });
+
+  $('.slick-dots button').attr('tabindex', 0)
+
+  $(".js-range-slider").ionRangeSlider({
+    type: "double",
+    onChange: function (data) {
+      $('.catalog__price-from').text(data.from);
+      $('.catalog__price-to').text(data.to);
+    },
+
+  });
+
 });

@@ -1,3 +1,4 @@
+body,
 html {
   height: 100%;
 }
@@ -14,6 +15,7 @@ body {
 
 button {
   cursor: pointer;
+  display: block;
 }
 
 .wrapper {
@@ -50,7 +52,7 @@ button {
 }
 
 .section {
-  padding-bottom: 120px;
+  margin-bottom: 120px;
 }
 
 .title {
@@ -143,3 +145,8 @@ fieldset {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.stock__title {
+  text-align: left;
+}
+

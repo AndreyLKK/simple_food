@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 52px;
+    margin-bottom: 40px;
   }
 
   &__img {
@@ -65,51 +65,84 @@
   }
 }
 
-.slick-dots button {
-  font-size: 0;
 
-  &::before {
-    width: 15px;
-    height: 15px;
-    background-color: $accent;
-    color: $accent;
-    border-radius: 50%;
-  }
-}
 
-.slick-dots li button:before {
-  height: 15px;
-  width: 15px;
-  bottom: 0;
-}
-
-.slick-dots li {
-  bottom: 0;
-  margin: 0 5px;
-  padding: 0;
-  cursor: pointer;
-}
 
 .slick-arrow {
+  line-height: 0;
+  position: absolute;
+  bottom: 0;
+  border: 3px solid;
+  border-color: #C2C2C2;
+  border-radius: 50%;
+  fill: #C2C2C2;
+  transition: box-shadow 0.4s, background-color 0.4s, border-color 0.4s, fill 0.4s;
+
+  &:focus {
+    outline-style: solid;
+    outline-width: 3px;
+    box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+  }
+
+  &:hover {
+    border-color: #FFAE94;
+    background-color: rgba(255, 122, 80, 0.1);
+    fill: #FFAE94;
+  }
+
+  &:active {
+    background-color: #FFF2ED;
+    border-color: #FFF2ED;
+    fill: #FF7A50;
+  }
+}
+
+.restaurant__slider-icon {
   width: 40px;
   height: 40px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  text-align: center;
-  position: absolute;
-  top: 366px;
-  left: 40%;
-
-
-  &::before {
-    font-size: 0;
-  }
 }
 
 .slick-prev {
-  right: 0;
+  left: 40%;
 }
 
 .slick-next {
   left: 56%;
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+}
+
+.slick-dots li {
+  font-size: 0;
+
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+
+}
+
+.slick-dots button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #C2C2C2;
+
+  &:focus {
+    outline: 3px solid;
+    outline-color: #FF7A50;
+  }
+  
+  &:hover {
+    box-shadow: 0px 0px 0px 2px rgba(255, 122, 80, 0.7);
+  }
+}
+
+.slick-dots .slick-active button{
+  background-color: $accent;
+  border-radius: 50%;
 }

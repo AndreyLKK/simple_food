@@ -12,7 +12,6 @@
 
   &__item {
 
-
     &:not(:last-child) {
       margin-right: 20px;
     }
@@ -24,7 +23,7 @@
     background-color: $white;
     color: $title;
     border-radius: 5px;
-    transition: background-color 0.4s, box-shadow 0.4s, color 0.4s;
+    transition: background-color 0.4s, box-shadow 0.4s, color 0.4s, fill 0.4s;
     display: flex;
     align-items: center;
 
@@ -36,6 +35,7 @@
       box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
       background-color: rgba(255, 122, 80, 0.1);
       color: $accent;
+      fill: $accent;
     }
 
     &:active {
@@ -45,6 +45,7 @@
     &--active {
       background-color: $accent;
       color: $white;
+      fill: $white;
     }
   }
 

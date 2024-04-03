@@ -5,6 +5,8 @@ const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
 const svgSprite = require('gulp-svg-sprite');
+const cheerio = require('gulp-cheerio');
+const replace = require('gulp-replace');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 const browserSync = require('browser-sync').create();
@@ -38,6 +40,9 @@ function scripts() {
     'node_modules/jquery/dist/jquery.js',
     'app/js/mixitup.js',
     'node_modules/slick-carousel/slick/slick.js',
+    'node_modules/ion-rangeslider/js/ion.rangeSlider.min.js',
+    'node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js',
+    'node_modules/rateyo/src/jquery.rateyo.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))
@@ -47,17 +52,27 @@ function scripts() {
 }
 
 function svgSprites() {
-  return src('app/images/icons/*.svg') // выбираем в папке с иконками все файлы с расширением svg
+  return src('app/images/icons/*.svg')
+    .pipe(cheerio({
+      run: ($) => {
+        $("[fill]").removeAttr("fill");
+        $("[stroke]").removeAttr("stroke");
+        $("[style]").removeAttr("style");
+      },
+      parserOptions: { xmlMode: true },
+    })
+    )
+    .pipe(replace('&gt;', '>')) // боремся с заменой символа 
     .pipe(
       svgSprite({
         mode: {
           stack: {
-            sprite: '../sprite.svg', // указываем имя файла спрайта и путь
+            sprite: '../sprite.svg',
           },
         },
       })
     )
-    .pipe(dest('app/images')); // указываем, в какую папку поместить готовый файл спрайта
+    .pipe(dest('app/images'));
 }
 
 function images() {
@@ -95,8 +110,8 @@ function cleanDist() {
 function watching() {
   watch(['app/scss/**/*.scss'], styles);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
-  watch(['app/**/*.html']).on('change', browserSync.reload);
   watch(['app/images/icons/*.svg'], svgSprites);
+  watch(['app/**/*.html']).on('change', browserSync.reload);
 }
 
 
