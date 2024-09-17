@@ -1,0 +1,37 @@
+.breadcrumbs {
+  background-color: rgba(255, 122, 80, 0.1);
+  height: 100%;
+
+  &__items {
+    display: flex;
+    align-items: center;
+    min-height: 65px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &::after {
+      content: '';
+      background-image: url('../images/breadcrumbs-arrow.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center 50%;
+      width: 6px;
+      height: 10px;
+      padding: 0 6px;
+    }
+
+    &:last-child::after {
+      display: none;
+
+    }
+  }
+
+  &__link {
+    color: #505050;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+}

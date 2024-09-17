@@ -1,0 +1,64 @@
+.hero {
+  padding-bottom: 120px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 159px);
+  }
+
+  &__img {
+    width: 100%;
+    max-height: 660px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+  &__title {
+    font-size: 66px;
+    color: $accent;
+    max-width: 450px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    color: #363853;
+  }
+
+  &__text {
+    line-height: 1.5;
+    max-width: 450px;
+    margin-bottom: 20px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
+
+  &__button:not(:last-child) {
+    margin-right: 34px;
+  }
+
+  &__link {
+    line-height: 1.5;
+    text-decoration: underline;
+    transition: box-shadow 0.4s, color 0.4s, text-shadow 0.4s;
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+      border-radius: 5px;
+    }
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:active {
+      text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+    }
+  }
+}

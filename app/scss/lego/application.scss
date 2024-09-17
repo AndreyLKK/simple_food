@@ -1,0 +1,42 @@
+.application {
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__wrapper {
+    max-width: 540px;
+    width: 100%;
+  }
+
+  &__title {
+    text-align: left;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  &__text {
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__icon {
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  &__img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    min-height: 380px;
+  }
+}

@@ -1,3 +1,152 @@
-body {
-  
+body,
+html {
+  height: 100%;
 }
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 400;
+  font-style: normal;
+  color: $default;
+  background-color: $bg;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1198px;
+  margin: 0 auto;
+  padding: 0 14px;
+}
+
+.logo {
+  transition: box-shadow 0.4s, opacity 0.4s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    border-radius: 5px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.section {
+  margin-bottom: 120px;
+}
+
+.title {
+  font-weight: 500;
+  color: $title;
+  font-size: 36px;
+  line-height: 1.3;
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.button {
+  padding: 7px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: $accent;
+  color: $white;
+  transition: box-shadow 0.4s, color 0.4s, background-color 0.4s;
+
+  &--middle {
+    padding: 12px 32px;
+    font-size: 18px;
+  }
+
+  &--big {
+    padding: 13px 38px;
+    font-weight: 500;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    border-radius: 5px;
+    color: $accent;
+    background-color: rgba(255, 104, 56, 0.1);
+  }
+
+  &:hover {
+    box-shadow: 0 5px 12px rgba(255, 104, 56, 0.2), 0 0 0 2px rgba(255, 104, 56, 0.7);
+    border-radius: 5px;
+    background-color: $white;
+    color: $accent;
+  }
+
+  &:active {
+    background-color: rgba(255, 122, 80, 0.1);
+    border-radius: 5px;
+    color: $accent;
+  }
+}
+
+.link {
+  line-height: 1.5;
+  text-decoration-line: underline;
+  color: $title;
+  transition: box-shadow 0.4s, color 0.4s, text-shadow 0.4s;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    border-radius: 5px;
+  }
+
+  &:hover {
+    color: $accent;
+  }
+
+  &:active {
+    text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+  }
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    border-radius: 5px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.stock__title {
+  text-align: left;
+}
+

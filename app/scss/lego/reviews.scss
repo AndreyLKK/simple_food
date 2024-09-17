@@ -1,0 +1,148 @@
+.reviews {
+
+  &__items {
+    position: relative;
+  }
+
+  &__blockquote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  &__img {
+    border-radius: 50%;
+    margin-right: 40px;
+  }
+
+  &__inner {
+    max-width: 655px;
+    padding: 0 40px;
+    width: 100%;
+    position: relative;
+  }
+
+  &__text {
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 30px;
+
+    &::before {
+      content: '';
+      width: 24px;
+      height: 20px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-image: url('../images/quotes-left.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &::after {
+      content: '';
+      width: 24px;
+      height: 20px;
+      position: absolute;
+      right: 0;
+      bottom: 90px;
+      background-image: url('../images/quotes-right.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__cite {
+    font-weight: 500;
+    color: $accent;
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  &__explanation {
+    font-size: 14px;
+  }
+}
+
+
+
+
+.slick-arrow {
+  line-height: 0;
+  position: absolute;
+  bottom: 0;
+  border: 3px solid;
+  border-color: #C2C2C2;
+  border-radius: 50%;
+  fill: #C2C2C2;
+  transition: box-shadow 0.4s, background-color 0.4s, border-color 0.4s, fill 0.4s;
+
+  &:focus {
+    outline-style: solid;
+    outline-width: 3px;
+    box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+  }
+
+  &:hover {
+    border-color: #FFAE94;
+    background-color: rgba(255, 122, 80, 0.1);
+    fill: #FFAE94;
+  }
+
+  &:active {
+    background-color: #FFF2ED;
+    border-color: #FFF2ED;
+    fill: #FF7A50;
+  }
+}
+
+.restaurant__slider-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.slick-prev {
+  left: 40%;
+}
+
+.slick-next {
+  left: 56%;
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+}
+
+.slick-dots li {
+  font-size: 0;
+
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+
+}
+
+.slick-dots button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #C2C2C2;
+
+  &:focus {
+    outline: 3px solid;
+    outline-color: #FF7A50;
+  }
+  
+  &:hover {
+    box-shadow: 0px 0px 0px 2px rgba(255, 122, 80, 0.7);
+  }
+}
+
+.slick-dots .slick-active button{
+  background-color: $accent;
+  border-radius: 50%;
+}
